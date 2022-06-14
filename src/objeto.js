@@ -30,7 +30,7 @@ class Objeto {
         return "";
       }
   
-      if (otroObjeto.y + otroObjeto.alto === this.y) {
+      if (otroObjeto.y + otroObjeto.alto === this.y ) {
         return "colision-superior";
       }
   
