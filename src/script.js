@@ -7,7 +7,7 @@ pelotaImage.src = "src/images/pelotaPadel.png";
 let baseImage = new Image();
 baseImage.src = "src/images/base.png";
 
-let base = new Base(0, 670, 200, 10, baseImage, 50, ctx);
+let base = new Base(0, 670, 200, 10, baseImage, 30, ctx);
 let pelota = new Pelota(0, 0, 30, 30, pelotaImage, 2, ctx);
 let pelota2 = new Pelota(0, 0, 30, 30, pelotaImage, 2, ctx);
 let pelota3 = new Pelota(0, 0, 30, 30, pelotaImage, 2, ctx);
@@ -49,6 +49,36 @@ const cargaInicial = () => {
     }
     if (base.detectarColision(pelota2) === "colision-derecha") {
       pelota2.direccionX = "derecha";
+    }
+                                                        // Detectamos la colision de la pelota3
+    if (base.detectarColision(pelota3,) === "colision-superior") {
+      pelota3.direccionY = "arriba";
+    }
+    if (base.detectarColision(pelota3) === "colision-izquierda") {
+      pelota3.direccionX = "izquierda";
+    }
+    if (base.detectarColision(pelota3) === "colision-derecha") {
+      pelota3.direccionX = "derecha";
+    }
+                                                        // Detectamos la colision de la pelota4
+    if (base.detectarColision(pelota4,) === "colision-superior") {
+      pelota4.direccionY = "arriba";
+    }
+    if (base.detectarColision(pelota4) === "colision-izquierda") {
+      pelota4.direccionX = "izquierda";
+    }
+    if (base.detectarColision(pelota4) === "colision-derecha") {
+      pelota4.direccionX = "derecha";
+    }
+                                                        // Detectamos la colision de la pelota5
+    if (base.detectarColision(pelota5,) === "colision-superior") {
+      pelota5.direccionY = "arriba";
+    }
+    if (base.detectarColision(pelota5) === "colision-izquierda") {
+      pelota5.direccionX = "izquierda";
+    }
+    if (base.detectarColision(pelota5) === "colision-derecha") {
+      pelota5.direccionX = "derecha";
     }
   };
 
@@ -122,7 +152,7 @@ const cargaInicial = () => {
 }
 
 const agrandarBase = () => {
-  base.ancho = 300;
+  base.ancho = 400;
 }
 //setInterval(incrementoVelocidadPelota, 5000);
 setInterval(moverPelota, 00);
