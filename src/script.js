@@ -1,63 +1,60 @@
 const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 
-//canvas.style.border = "5px solid black";
+let pelotaImage = new Image();
+pelotaImage.src = "src/images/pelotaPadel.png";
+
+let baseImage = new Image();
+baseImage.src = "src/images/base.png";
+
+let base = new Base(200, 650, 150, 10, baseImage, 50, ctx);
+let pelota = new Pelota(300, 200, 30, 30, pelotaImage, 10, ctx);
 
 
+const cargaInicial = () => {
+  base.dibujar();
+  pelota.dibujar();
 
-let baseImg = new Image();
-baseImg.src = "src/images/base.png"
-let base = new Base (300, 750, 150, 10, baseImg);
+  const cambiarDireccionSiColision = () => {
+    if (base.detectarColision(pelota) === "colision-superior") {
+      pelota.direccionY = "arriba";
+    }
+    if (base.detectarColision(pelota) === "colision-izquierda") {
+      pelota.direccionX = "izquierda";
+    }
+    if (base.detectarColision(pelota) === "colision-derecha") {
+      pelota.direccionX = "derecha";
+    }
+  };
 
-
-let pelotaImg = new Image();
-pelotaImg.src = "src/images/pelotaPadel.png"
-let pelota = new Pelota(50,50,35,40, pelotaImg);
+  const moverPelota = () => {
+    pelota.borrar();
+    pelota.moverPelota();
+    console.log(base.comprobarPosicionEnCanvas());
+    //console.log(pelota.comprobarPosicionEnCanvas());
+    //console.log(base.detectarColision(pelota));
+    cambiarDireccionSiColision();
+    pelota.dibujar();
+  };
   
+  const incrementoVelocidad =() =>{
+    if (pelota.velocidad < 70){
+        pelota.velocidad += 1;
 
-
-
-
-
-
-const cargaInicial  = () =>{
-     
-   base.dibujar();
-   pelota.dibujar();
-
-   const detectarColision = () =>{
-      if (pelota.y + pelota.alto == base.y){
-         if(base.x < pelota.x && base.x + base.ancho > pelota.x){
-            pelota.direccionY = "arriba";
-         }
-      }
-
-   };
-
-   const moverPelota = () =>{
-      pelota.borrar();
-      pelota.comprobarRebote();
-      detectarColision();
-      pelota.dibujar();
-   };
-
-   setInterval(moverPelota, 20);
+    }
+    console.log(pelota.velocidad);
+}
+  setInterval(incrementoVelocidad, 5000);
+  setInterval(moverPelota, 20);
 };
 
-
-
-const logKey = (e) =>{
-   e.preventDefault();
-   base.borrar();
-   base.moverBase(e.key);
-   base.dibujar();
-   console.log(e)
+const logKey = (e) => {
+  e.preventDefault();
+  base.borrar();
+  base.moverBase(e.key);
+  base.dibujar();
 };
-
-
-
 
 document.addEventListener("keydown", logKey);
 
 window.addEventListener("load", cargaInicial);
-   

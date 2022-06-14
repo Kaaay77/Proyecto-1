@@ -1,56 +1,38 @@
-
-// Creamos la clase Pelota
-class Pelota {
-    constructor( x, y, ancho, alto, imagen){
-        this.x = x, 
-        this.y = y;
-        this.ancho = ancho;
-        this.alto = alto; 
-        this.imagen = imagen;
+class Pelota extends Objeto {
+    constructor(x, y, ancho, alto, imagen, velocidad, ctx) {
+      super(x, y, ancho, alto, imagen, ctx);
+      this.direccionX = "derecha";
+      this.direccionY = "abajo";
+      this.velocidad = velocidad;
+    }
+  
+    moverPelota() {
+      let situacionEnElCanvas = this.comprobarPosicionEnCanvas();
+      if (situacionEnElCanvas === "derecha") {
+        this.direccionX = "izquierda";
+      }
+      if (situacionEnElCanvas === "izquierda") {
         this.direccionX = "derecha";
+      }
+      if (situacionEnElCanvas === "arriba") {
         this.direccionY = "abajo";
+      }
+      if (situacionEnElCanvas === "abajo") {
+        this.direccionY = "arriba";
+      }
+      if (this.direccionX === "derecha") {
+        this.x += this.velocidad;
+      }
+      if (this.direccionX === "izquierda") {
+        this.x -= this.velocidad;
+      }
+      if (this.direccionY === "arriba") {
+        this.y -= this.velocidad;
+      }
+      if (this.direccionY === "abajo") {
+        this.y += this.velocidad;
+      }
     }
-
-    dibujar(){
-        ctx.drawImage(this.imagen, this.x, this.y, this.ancho, this.alto);
-    }
-
-    borrar(){
-        ctx.clearRect(this.x, this.y, this.ancho, this.alto)
-    }
-
-    comprobarRebote() {
-        console.log(ctx.canvas.width);
-
-        if (this.x >= ctx.canvas.width - this.ancho){
-            this.direccionX = "izquierda";
-        }
-        if (this.x <= 0){
-            this.direccionX = "derecha";
-        }
-        if (this.y >= ctx.canvas.width - this.ancho){
-            this.direccionY = "arriba";
-            // aqui pondriamos un alert para indicar que se pierde la partida
-        }
-        if (this.y <= 0){
-            this.direccionY = "abajo";
-        }
-
-
-
-        if (this.direccionX === "izquierda"){
-            this.x -= 10;
-        }
-        if (this.direccionX === "derecha"){
-            this.x += 10;
-        }
-        if (this.direccionY === "arriba"){
-            this.y -= 10;
-        }
-        if (this.direccionY === "abajo"){
-            this.y += 10;
-        }
-
-    } 
-
-}
+    
+  }
+  
