@@ -21,7 +21,6 @@ let pelota5Com = false;
 
 
 
-
 const cargaInicial = () => {
   base.dibujar();
   pelota.dibujar();
