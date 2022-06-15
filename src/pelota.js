@@ -21,6 +21,8 @@ class Pelota extends Objeto {
         this.direccionY = "arriba";
         if (this.direccionY === "arriba" ){
           console.log('Game Over')
+          window.location.replace('../gameOver.html')
+
         }
       }
       if (this.direccionX === "derecha") {

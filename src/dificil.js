@@ -263,7 +263,7 @@ const moverPelota10 = ()=>{
     }
   }
   const comprobarPelota10 = () =>{
-    if ( pelota510Com === false){
+    if ( pelota10Com === false){
       pelota10Com = true;
       setInterval(moverPelota10, 0);
     }
