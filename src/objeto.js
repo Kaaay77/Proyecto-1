@@ -6,6 +6,8 @@ class Objeto {
       this.alto = alto;
       this.imagen = imagen;
       this.ctx = ctx;
+      this.contador = 4;
+      this.score = document.getElementById('score')
     }
   
     dibujar() {
@@ -61,9 +63,18 @@ class Objeto {
         return "arriba";
       }
       if (this.y >= ctx.canvas.height - this.alto) {
+        //const score = document.getElementById('score')
+        //this.contador = this.contador - 1;
+        //this.score.innerHTML = this.contador;
+       // console.log(this.contador)
         return "abajo";
       }
       return "dentro";
+    }
+
+    returnContador(){
+      return this.contador
+
     }
   }
   
