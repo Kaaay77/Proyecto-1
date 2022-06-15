@@ -56,13 +56,6 @@ const cargaInicial = () => {
     if (pelota.velocidad === 2){
       return pelota.velocidad = 4;
     }
-    if (pelota.velocidad === 4){
-      return pelota.velocidad = 3;
-    }if (pelota.velocidad === 3){
-      return pelota.velocidad = 4;
-    }
-    
-    console.log(pelota.velocidad);
 }
 
     setInterval(comprobarPelota, 3000);
