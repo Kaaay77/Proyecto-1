@@ -7,8 +7,8 @@ pelotaImage.src = "./src/images/pelotaPadel.png";
 let baseImage = new Image();
 baseImage.src = "./src/images/base.png";
 
-let base = new Base(200, canvas.height - 30, 200, 10, baseImage, 30, ctx);
-let pelota = new Pelota(0, 0, 30, 30, pelotaImage, 2, ctx);
+let base = new Base(0, canvas.height - 30, canvas.width, 10, baseImage, 30, ctx);
+let pelota = new Pelota(-200, -200, 30, 30, pelotaImage, 2, ctx);
 
 
 
@@ -46,15 +46,20 @@ const cargaInicial = () => {
 
   const incrementoVelocidadPelota =() =>{
 
-    if (pelota.velocidad < 3){
-      pelota.velocidad = 4
+    if (pelota.velocidad === 2){
+      return pelota.velocidad = 4;
+    }
+    if (pelota.velocidad === 4){
+      return pelota.velocidad = 3;
+    }if (pelota.velocidad === 3){
+      return pelota.velocidad = 5;
     }
     
     console.log(pelota.velocidad);
 }
 
 
-    setInterval(incrementoVelocidadPelota, 10000);
+    setInterval(incrementoVelocidadPelota, 5000);
     setInterval(moverPelota, 01);
 };
 
