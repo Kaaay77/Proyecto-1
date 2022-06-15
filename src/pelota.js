@@ -4,24 +4,28 @@ class Pelota extends Objeto {
       this.direccionX = "derecha";
       this.direccionY = "abajo";
       this.velocidad = velocidad;
+      this.audio1 = document.getElementById('audio1')
     }
   
     moverPelota() {
       let situacionEnElCanvas = this.comprobarPosicionEnCanvas();
       if (situacionEnElCanvas === "derecha") {
         this.direccionX = "izquierda";
+        this.audio1.play();
       }
       if (situacionEnElCanvas === "izquierda") {
         this.direccionX = "derecha";
+        this.audio1.play();
       }
       if (situacionEnElCanvas === "arriba") {
         this.direccionY = "abajo";
+        this.audio1.play();
       }
       if (situacionEnElCanvas === "abajo") {
         this.direccionY = "arriba";
         if (this.direccionY === "arriba" ){
           console.log('Game Over')
-          window.location.replace('../gameOver.html')
+          window.location.replace('./../html/gameOver.html')
 
         }
       }

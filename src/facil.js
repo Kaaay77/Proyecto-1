@@ -2,10 +2,10 @@ const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 
 let pelotaImage = new Image();
-pelotaImage.src = "./src/images/pelotaPadel.png";
+pelotaImage.src = "./../src/images/pelotaPadel.png";
 
 let baseImage = new Image();
-baseImage.src = "./src/images/base.png";
+baseImage.src = "./../src/images/base.png";
 
 let base = new Base(200, canvas.height - 26, 200, 10, baseImage, 30, ctx);
 let pelota = new Pelota(-60, 0, 60, 60, pelotaImage, 2, ctx);
