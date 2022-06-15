@@ -7,17 +7,19 @@ pelotaImage.src = "src/images/pelotaPadel.png";
 let baseImage = new Image();
 baseImage.src = "src/images/base.png";
 
-let base = new Base(0, 670, 200, 10, baseImage, 30, ctx);
-let pelota = new Pelota(0, 0, 30, 30, pelotaImage, 2, ctx);
-let pelota2 = new Pelota(0, 0, 30, 30, pelotaImage, 2, ctx);
-let pelota3 = new Pelota(0, 0, 30, 30, pelotaImage, 2, ctx);
-let pelota4 = new Pelota(0, 0, 30, 30, pelotaImage, 2, ctx);
-let pelota5 = new Pelota(0, 0, 30, 30, pelotaImage, 2, ctx);
+let base = new Base(0, canvas.height - 30, 200, 10, baseImage, 30, ctx);
+let pelota = new Pelota(0, 0, 20, 20, pelotaImage, 2, ctx);
+let pelota2 = new Pelota(0, 0, 20, 20, pelotaImage, 2, ctx);
+let pelota3 = new Pelota(0, 0, 20, 20, pelotaImage, 2, ctx);
+let pelota4 = new Pelota(0, 0, 20, 20, pelotaImage, 2, ctx);
+let pelota5 = new Pelota(0, 0, 20, 20, pelotaImage, 2, ctx);
 
 let pelota2Com = false;
 let pelota3Com = false;
 let pelota4Com = false;
 let pelota5Com = false;
+
+
 
 
 const cargaInicial = () => {
@@ -115,7 +117,7 @@ const cargaInicial = () => {
   cambiarDireccionSiColision();
   pelota5.dibujar();
   }
-
+  
   const comprobarPelota2 = () =>{
     if ( pelota2Com === false){
       pelota2Com = true;
@@ -128,6 +130,7 @@ const cargaInicial = () => {
       setInterval(moverPelota3, 0);
     }
   }
+  
   const comprobarPelota4 = () =>{
     if ( pelota4Com === false){
       pelota4Com = true;
@@ -141,7 +144,6 @@ const cargaInicial = () => {
     }
   }
 
-
   const incrementoVelocidadPelota =() =>{
 
     if (pelota.velocidad < 3){
@@ -152,16 +154,15 @@ const cargaInicial = () => {
 }
 
 const agrandarBase = () => {
-  base.ancho = 400;
+  base.ancho = 350;
 }
 //setInterval(incrementoVelocidadPelota, 5000);
-setInterval(moverPelota, 00);
-
-setInterval(comprobarPelota2, 7000);
-setInterval(comprobarPelota3, 10000);
-setInterval(comprobarPelota4, 15000);
-setInterval(comprobarPelota5, 20000);
-setInterval(agrandarBase, 10000);
+  setInterval(moverPelota, 00);
+  setInterval(comprobarPelota2, 5000);
+  setInterval(comprobarPelota3, 7000);
+  setInterval(comprobarPelota4, 9000);
+  setInterval(comprobarPelota5, 11000);
+  setInterval(agrandarBase, 8000);
 };
 
 const logKey = (e) => {

@@ -19,6 +19,7 @@ class Pelota extends Objeto {
       }
       if (situacionEnElCanvas === "abajo") {
         this.direccionY = "arriba";
+        //alert('GAME OVER')
       }
       if (this.direccionX === "derecha") {
         this.x += this.velocidad;
@@ -35,4 +36,7 @@ class Pelota extends Objeto {
     }
     
   }
+
+
+
   
