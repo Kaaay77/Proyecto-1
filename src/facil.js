@@ -7,7 +7,7 @@ pelotaImage.src = "./src/images/pelotaPadel.png";
 let baseImage = new Image();
 baseImage.src = "./src/images/base.png";
 
-let base = new Base(0, canvas.height - 30, canvas.width, 10, baseImage, 30, ctx);
+let base = new Base(200, canvas.height - 30, 200, 10, baseImage, 30, ctx);
 let pelota = new Pelota(-200, -200, 30, 30, pelotaImage, 2, ctx);
 
 
