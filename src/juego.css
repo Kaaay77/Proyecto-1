@@ -32,7 +32,7 @@ body{
     margin-bottom: 150px;
 }
 
-h1{
+.classH1{
     background: var(--clr);
     color: var(--clr);
     box-shadow: 0 0 35px var(--clr);
@@ -43,18 +43,18 @@ h1{
     transition: 0.5s;
     position: relative;
 }
-h1::before{
+.classH1::before{
     content: '';
     position: absolute;
     inset: 2px;
     background: #27282c;
 }
-h1 p{
+.classH1 p{
     position: relative;
     z-index: 1;
 }
 
-a{
+.classA{
     position: relative;
     background: #444;
     color: #fff;
@@ -65,28 +65,28 @@ a{
     padding: 10px 30px;
     transition: 0.5s;
 }
-a:hover{
+.classA:hover{
     letter-spacing: 0.25em;
     background: var(--clr);
     color: var(--clr);
     box-shadow: 0 0 35px var(--clr);
 }
-a::before{
+.classA::before{
     content: '';
     position: absolute;
     inset: 2px;
     background: #27282c;
 }
-a span{
+.classA span{
     position: relative;
     z-index: 1;
 }
-a i {
+.classA i {
     position: absolute;
     inset: 0;
     display: block;
 }
-a i::before{
+.classA i::before{
     content: '';
     position: absolute;
     left: 80%;
@@ -98,11 +98,11 @@ a i::before{
     transform: translateX(-50%);
     transition: 0.5s;
 }
-a:hover i::before{
+.classA:hover i::before{
     width: 20px;
     left: 20%;
 }
-a i::after{
+.classA i::after{
     content: '';
     position: absolute;
     left: 20%;
@@ -114,7 +114,21 @@ a i::after{
     transform: translateX(-50%);
     transition: 0.5s;
 }
-a:hover i::after{
+.classA:hover i::after{
     width: 20px;
     left: 80%;
+}
+
+
+h3{
+    position: absolute;
+    margin-top: 700px;
+    margin-left: 950px;
+}
+h3 a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-size: 0.9em;
+    letter-spacing: 0.25em;    
 }

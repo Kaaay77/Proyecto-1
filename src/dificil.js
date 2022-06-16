@@ -44,7 +44,6 @@ const cargaInicial = () => {
   pelota9.dibujar();
   pelota10.dibujar();
   
-  
 
   const cambiarDireccionSiColision = () => {
                                                         //detectamos la colision de la pelota Principal
